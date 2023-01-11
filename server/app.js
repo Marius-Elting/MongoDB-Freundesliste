@@ -2,13 +2,11 @@ import express from "express"
 import cors from "cors"
 import "./config/config.js"
 import { getDb } from "./utils/db.js"
-import bodyParser from "body-parser"
 
 const app = express()
 const PORT = process.env.PORT
 
 app.use(cors())
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get("/api/friends", (req, res) => {
